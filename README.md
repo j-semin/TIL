@@ -55,3 +55,125 @@ print(함수명(실행인자))
   - 함수는 return을 이용해 값을 돌려줄 수 있다.
   - 함수를 사용하는 것은 함수 안의 코드를 모두 실행한 뒤, 이 함수의 자리에 return에 있는 값을 넣은 것과 같다.
   - 여러 값을 반환하려면, return 뒤에 여러 값을 쉼표로 나누어 넣는다.
+
+#### 사용자 입력
+- 사용자의 키보드 입력을 return하는 함수(print 기능을 내장하고 있음.)
+```py
+input('text')
+```
+와
+```py
+print('text', end = '')
+input()
+```
+는 같은 결과를 냄.
+- Ctrl + C 로 프로그램 즉시 종료 가능. 
+
+#### 리스트 
+- **.append**
+```py
+list.append(16)
+```
+- **in**
+```py
+n = 10
+if n in list:
+  print("{}은 있어".format(n))
+```
+- **del**
+```py
+del list[4]
+```
+- **.remove**: 같은 값이 여러개 있는 경우, 가장 먼저 나오는 값 하나만 지워짐.
+```py
+list.remove(4)
+```
+
+#### for 반복문 
+##### for in list
+: 순회할 리스트가 정해져 있을 때 
+```py
+list = ['a','b','c','d','e']
+for alpha in list:
+  print(alpha)
+```
+
+##### for in range
+: 순회할 횟수가 정해져 있을 때(또는 1씩 증가하는 숫자가 필요할 때) 
+```py
+for i in range(5): # [0,1,2,3,4]
+  print(i)
+```
+```py
+names = ['철수','영희','바둑이','귀도','비단뱀']
+
+for i in range(len(names))): # len(): 리스트의 길이(원소의 개수)
+  name = names[i]
+  print('{}번: {}'.format(i+1, name))
+
+# 결과:
+# 1번: 철수
+# 2번: 영희
+# 3번: 바둑이
+# 4번: 귀도
+# 5번: 비단뱀 
+```
+
+#### 모듈(Module)
+- 미리 만들어진 코드를 가져와 쓰는 방법
+- **import <모듈이름>**
+- 사용: **<모듈이름>.<모듈 안의 구성요소>**
+```py
+import math # 수학과 관련된 기능
+math.pi
+import random # 랜덤과 관련된 기능
+random.choise()
+import urllib.request # url을 넣으면 페이지 내용을 돌려주는 기능 
+```
+- 모듈을 만들 수도 있음.(모듈 파일과 그 모듈을 사용하는 파일이 같은 폴더에 있어야 함.)
+
+#### 검색하기
+- 검색은 항상 **구글**에서!
+- '파이썬3' or 'python3' + 궁금한 키워드
+- 안나오면 영어로 검색 
+
+#### 문서찾기
+- 검색예시> **python3 검색내용 generation site:python.org**
+  - 'generation': 프로그래밍에서 값을 생성한다는 의미.
+  - 'site:': 해당 사이트의 페이지만 모아서 보여주는 구글의 기능
+  - python.org: 공식 문서 사이트(필요한 내용을 둘러보고 싶을 때, 파이썬 내장 모듈과 함수의 정보가 필요할 때)
+  - 구글 또는 stackoverflow.com(문제의 구체적인 해결 방법이 알고 싶을 때)
+
+#### 딕셔너리
+- 여러 값을 저장해놓고 필요한 값을 꺼내 쓰는 기능
+- 이름표(key)를 이용해 값(value)를 꺼내 사용
+```py
+딕셔너리명 = {
+    'key1':'value1',
+    'key2':'value2',
+    }
+```
+##### 딕셔너리 수정하기
+- 값 수정
+```py
+dict['one'] = 11
+```
+- 값 추가
+```py
+dict['three'] = 3
+```
+- 값 삭제
+```py
+del(dict['one'])
+dict.pop('two')
+```
+
+#### 튜플을 이용한 변수의 packing, unpacking
+- 하나의 변수에 여러개의 변수 대입 가능.
+```py
+x, y = y, x
+```
+- 함수의 return 값으로 여러 값을 전달 할 수 있다. 
+  - a[0], a[1] == *a
+  
+#### 
