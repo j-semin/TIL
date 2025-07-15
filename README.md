@@ -176,4 +176,198 @@ x, y = y, x
 - 함수의 return 값으로 여러 값을 전달 할 수 있다. 
   - a[0], a[1] == *a
   
-#### 
+#### 자료형 다루기
+- **type(객체)**: 자료형 확인 
+- **isinstance(객체, 자료형)**: 어떤 객체가 특정 자료형(클래스)의 인스턴스인지 확인할 때 사용하는 내장 함수(상속관계 고려)
+
+#### 클래스
+- **class 클래스명():**
+- 클래스와 인스턴스를 이용하면 데이터와 코드를 사람이 이해하기 쉽게 포장할 수 있다.
+- 클래스에 함수를 넣을 수 있다. 
+- **모델링**
+```py
+class Human():
+
+def create_human(name, weight):
+  person = Human()
+  person.name = name
+  person.weight = weight
+  return person
+
+Human.create = create_human
+
+person = Human.create("철수", 60.5)
+
+def eat(person):
+  person.weight += 0.1
+  print("{}가 먹어서 {}kg이 되었습니다".format(person.name, person.weight))
+
+def walk(person):
+  person.weight -= 0.1
+  print("{}가 걸어서 {}kg이 되었습니다".format(person.name, person.weight))
+
+Human.eat = eat
+Human.walk = walk
+
+person.walk()
+person.eat()
+person.walk()
+
+# 결과:
+# 철수가 걸어서 60.4kg이 되었습니다
+# 철수가 먹어서 60.5kg이 되었습니다
+# 철수가 걸어서 60.4kg이 되었습니다
+```
+
+#### 메소드
+클래스 안에 정의된 함수.
+클래스에 묶여서 클래스의 인스턴스와 관계되는 일을 하는 함수를 말한다. 
+```py
+class Human():
+
+  def create(name, weight):
+    person = Human()
+    person.name = name
+    person.weight = weight
+    return person
+
+  def eat(self):
+    self.weight += 0.1
+    print("{}가 먹어서 {}kg이 되었습니다".format(self.name, self.weight))
+
+  def walk(self):
+    self.weight -= 0.1
+    print("{}가 걸어서 {}kg이 되었습니다".format(self.name, self.weight))
+
+  def speak(self, message):
+    print(message)
+
+person = Human.create("철수", 60.5)
+
+person.speak("안녕하세요")
+
+# 결과:
+# 안녕하세요 
+```
+
+#### 특수한 메소드 
+- **_ _ init _ _**(초기화 함수): 인스턴스를 만들 때 실행되는 함수
+- **_ _ str _ _**(문자열화 함수): 인스턴스 자체를 출력할 때의 형식을 지정해주는 함수 
+```py
+class Human():
+
+  def __init__(self): # 초기화 함수
+    self.name = name
+    self.weight = weight
+
+  def __str__(self): # 문자열화 함수 
+    return "{} (몸무게 {}kg)".format(self.name, self.weight)
+
+  def eat(self):
+    self.weight += 0.1
+    print("{}가 먹어서 {}kg이 되었습니다".format(self.name, self.weight))
+
+  def walk(self):
+    self.weight -= 0.1
+    print("{}가 걸어서 {}kg이 되었습니다".format(self.name, self.weight))
+
+person = Human("사람", 60.5) 
+
+print(person.name)
+print(person.weight)
+
+print(person)
+
+# 결과:
+# 사람
+# 60.5 
+
+# 사람(몸무게 60.5kg)
+```
+
+#### 상속
+```py
+class Animal(): # 부모클래스
+  def walk(self):
+    print("걷는다")
+
+  def eat(self):
+    print("먹는다")
+
+class Human(Animal): # 자식클래스
+
+  def wave(self):
+    print("손을 흔든다")
+
+class Dog(Animal): # 자식클래스 
+
+  def wag(self):
+    print("꼬리를 흔든다")
+
+person = Human()
+person.walk()
+person.eat()
+person.wave()
+
+dog = Dog()
+dog.walk()
+dog.eat()
+dog.wag()
+
+# 결과:
+# 걷는다
+# 먹는다
+# 손을 흔든다
+# 걷는다
+# 먹는다
+# 꼬리를 흔든다 
+```
+
+#### 단순 오버라이드
+사람이나 강아지의 greet 메소드를 "부모의 greet 메소드를 오버라이드했다(덮어썼다)"고 할 수 있음 
+```py
+class Animal(): # 부모클래스
+  def walk(self):
+    print("걷는다")
+
+  def eat(self):
+    print("먹는다")
+
+  def greet(self):
+    print("인사한다")
+
+class Cow(Animal): # 자식클래스(소)
+    '''소'''
+    
+class Human(Animal): # 자식클래스(사람)
+  
+  def wave(self):
+    print("손을 흔든다")
+
+  def greet(self):
+    self.wave()
+
+class Dog(Animal): # 자식클래스(강아지)
+
+  def wag(self):
+    print("꼬리를 흔든다")
+
+  def greet(self):
+    self.wag() 
+
+cow = Cow()
+cow.greet() 
+
+person = Human()
+person.greet()
+
+dog = Dog()
+dog.greet()
+
+# 결과:
+# 인사한다
+# 손을 흔든다
+# 꼬리를 흔든다
+```
+
+
