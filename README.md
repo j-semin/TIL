@@ -422,5 +422,20 @@ print(score_dict)
 ```
 <img width="560" height="332" alt="스크린샷 2025-07-16 160119" src="https://github.com/user-attachments/assets/8234e8ca-c803-4d05-be00-caa8a7f51a2c" />
 
+#### datetime
+- datetime.datetime: 날짜와 시간 자체
+- datetime.timedelta: 시간 간격(차이)
+```py
+import datetime
 
+start_time = datetime.datetime(2025,9,1) # (년,월,일,시,분,초,마이크로초)
+how_long = start_time - datetime.datetime.now()
 
+print(type(how_long))
+print("9월 1일까지 {}일 {}시간 남았습니다.".format(how_long.days, how_long.seconds // 3600))
+
+# 결과:
+# <class 'datetime.timedelta'>
+# 9월 1일까지 46일 7시간 남았습니다.
+```
+- datetime과 timedelta 클래스를 서로 더하고 빼면 시간과 날짜를 자유자재로 사용 가능. 
