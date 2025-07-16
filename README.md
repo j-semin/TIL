@@ -420,6 +420,7 @@ print(score_dict)
 # 성진 100
 # {'태연': 85, '진우': 92, '정현': 78, '하늘': 90, '성진': 100}
 ```
+<img width="560" height="332" alt="스크린샷 2025-07-16 160119" src="https://github.com/user-attachments/assets/8234e8ca-c803-4d05-be00-caa8a7f51a2c" />
 
 
 
