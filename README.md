@@ -370,4 +370,56 @@ dog.greet()
 # 꼬리를 흔든다
 ```
 
+#### List comprehension
+```py
+areas = []
+for i in range(1, 11):
+    if i%2 == 0:
+        areas += [i*i]
+print("areas:", areas)
+
+areas2 = [i*i for i in range(1, 11) if i%2 == 0]
+print("areas2:", areas2)
+
+# 결과:
+# areas: [4, 16, 36, 64, 100]
+# areas2: [4, 16, 36, 64, 100]
+```
+- for문 중첩시키기 
+```py
+# 15*15인 바둑판의 각 좌표를 튜플로 만들어서 값으로 가지는 리스트
+print([(x, y) for x in range(15) for y in range(15)])
+```
+
+#### Dictionary comprehension
+```py
+students = ['태연','진우','정현','하늘','성진']
+students_dict = {"{}번".format(number + 1): name for number, name in enumerate(students)}
+
+print(students_dict)
+
+# 결과:
+# {'1번': '태연', '2번': '진우', '3번': '정현', '4번': '하늘', '5번': '성진'}
+```
+- zip
+```py
+students = ['태연','진우','정현','하늘','성진']
+scores = [85,92,78,90,100]
+
+for x, y in zip(students, scores):
+    print(x,y)
+
+score_dict = {student : score for student, score in zip(students, scores)}
+print(score_dict)
+
+# 결과:
+# 태연 85
+# 진우 92
+# 정현 78
+# 하늘 90
+# 성진 100
+# {'태연': 85, '진우': 92, '정현': 78, '하늘': 90, '성진': 100}
+```
+
+
 
