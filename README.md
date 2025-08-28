@@ -6,3 +6,4 @@
 - [프로그래머스3](https://github.com/j-semin/TIL/blob/d7ba094fb11c40f40abe79ed18594e47c8592530/Python/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A43.ipynb)
 - [프로그래머스4](https://github.com/j-semin/TIL/blob/991dca130a739f7354549373473e42f4f5a7ae72/Python/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A44.ipynb)
 - [프로그래머스5](https://github.com/j-semin/TIL/blob/5c1028e92a5317d3ee600abd040e756cbe747fd2/Python/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A45.ipynb)
+- [프로그래머스6](https://github.com/j-semin/TIL/blob/6e9f4bb11fb6f79640066037f4c489c761271cf1/Python/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A46.ipynb)
